@@ -39,7 +39,7 @@ const TeamStore = Fluxxor.createStore({
 
     addHeroToTeam(hero) {
         var heroIndex = this.heroPool.indexOf(hero);
-        if (heroIndex !== -1) {
+        if (heroIndex !== -1 && this.selectedHeroes.length < 6) {
             this.heroPool.splice(heroIndex, 1);
             this.selectedHeroes.push(hero);
         }
