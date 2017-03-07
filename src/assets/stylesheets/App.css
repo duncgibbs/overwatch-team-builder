@@ -1,25 +1,25 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 80px;
+    height: 80px;
 }
 
 .App-header {
-  font-family: "Overwatch";
-  background-color: #F6F6F6;
-  height: 150px;
-  padding: 20px;
-  color: #43484C;
+    font-family: "Overwatch";
+    background-color: #F6F6F6;
+    height: 150px;
+    padding: 20px;
+    color: #43484C;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 @font-face {
-  font-family: "Overwatch";
-  src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff');
+    font-family: "Overwatch";
+    src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format('woff');
 }
