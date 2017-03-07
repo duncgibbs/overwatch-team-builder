@@ -9,7 +9,7 @@ class HeroPicker extends Component {
     renderHeroPortraits() {
         return _.map(this.props.heroPool, (hero) => {
             return (
-                <HeroPortrait key={hero} hero={hero} addHeroToTeam={this.props.addHeroToTeam} />
+                <HeroPortrait key={hero} hero={hero} handleClick={this.props.addHeroToTeam} />
             );
         });
     }

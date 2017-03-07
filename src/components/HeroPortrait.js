@@ -7,7 +7,7 @@ class HeroPortrait extends Component {
     }
 
     handleClick(event) {
-        this.props.addHeroToTeam(event.target.name);
+        this.props.handleClick(event.target.name);
     }
 
     render() {

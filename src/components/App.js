@@ -9,6 +9,7 @@ class App extends Component {
         super(props);
         this.state = this.props.flux.store('TeamStore').getState();
         this.addHeroToTeam = this.props.flux.actions.team.addToTeam;
+        this.removeHeroFromTeam = this.props.flux.actions.team.removeFromTeam;
     }
 
     render() {
@@ -19,8 +20,9 @@ class App extends Component {
                     <h2>Team Builder</h2>
                 </div>
                 <div className="team-display">
-                    <Team />
+                    <Team team={this.state.selectedHeroes} removeHeroFromTeam={this.removeHeroFromTeam}/>
                 </div>
+                <hr/>
                 <div className="hero-picker">
                     <HeroPicker heroPool={this.state.heroPool} addHeroToTeam={this.addHeroToTeam} />
                 </div>

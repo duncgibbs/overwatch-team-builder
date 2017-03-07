@@ -1,4 +1,5 @@
 import Fluxxor from 'fluxxor';
+import _ from 'lodash';
 
 const TeamStore = Fluxxor.createStore({
     initialize() {
@@ -28,9 +29,11 @@ const TeamStore = Fluxxor.createStore({
             'widowmaker',
             'zenyatta'
         ];
+        this.heroPool = _.sortBy(this.heroPool);
         this.selectedHeroes = [];
         this.bindActions(
-            'ADD_HERO_TO_TEAM', this.addHeroToTeam
+            'ADD_HERO_TO_TEAM', this.addHeroToTeam,
+            'REMOVE_HERO_FROM_TEAM', this.removeHeroFromTeam
         );
     },
 
@@ -40,7 +43,16 @@ const TeamStore = Fluxxor.createStore({
             this.heroPool.splice(heroIndex, 1);
             this.selectedHeroes.push(hero);
         }
-        console.log(this.selectedHeroes);
+        this.emit('change');
+    },
+
+    removeHeroFromTeam(hero) {
+        var heroIndex = this.selectedHeroes.indexOf(hero);
+        if (heroIndex !== -1) {
+            this.selectedHeroes.splice(heroIndex, 1);
+            this.heroPool.push(hero);
+            this.heroPool = _.sortBy(this.heroPool);
+        }
         this.emit('change');
     },
 
