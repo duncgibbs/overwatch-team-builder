@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HeroPortrait from './HeroPortrait';
+import '../assets/stylesheets/Team.css'; 
 import flux, { connectToStores } from '../flux';
 const TeamStore = flux.store('TeamStore');
 import _ from 'lodash';
