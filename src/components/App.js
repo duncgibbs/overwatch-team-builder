@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo_with_title.png';
 import '../assets/stylesheets/App.css';
-import HeroPicker from './HeroPicker';
 import Team from './Team';
+import HeroPicker from './HeroPicker';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = this.props.flux.store('TeamStore').getState();
+        this.addHeroToTeam = this.props.flux.actions.team.addToTeam;
+    }
+
     render() {
         return (
             <div className="App">
@@ -16,7 +22,7 @@ class App extends Component {
                     <Team />
                 </div>
                 <div className="hero-picker">
-                    <HeroPicker />
+                    <HeroPicker heroPool={this.state.heroPool} addHeroToTeam={this.addHeroToTeam} />
                 </div>
             </div>
         );
