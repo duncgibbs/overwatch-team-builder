@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../assets/images/logo_with_title.png';
 import '../assets/stylesheets/App.css';
-import readdirSync from 'fs';
+import HeroPicker from './HeroPicker';
+import Team from './Team';
 
 class App extends Component {
     render() {
@@ -12,6 +13,7 @@ class App extends Component {
                     <h2>Team Builder</h2>
                 </div>
                 <div className="team-display">
+                    <Team />
                 </div>
                 <div className="hero-picker">
                     <HeroPicker />
