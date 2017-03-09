@@ -1,9 +1,10 @@
 .team-container {
-    display: 'flex';
-    flex-wrap: 'wrap';
-    justify-content: 'center';
-    div {
-        margin-right: 10px;
-        margin-left: 10px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-container div {
+    margin-right: 10px;
+    margin-left: 10px;
 }

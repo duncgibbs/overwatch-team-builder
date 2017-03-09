@@ -1,9 +1,10 @@
 .hero-portraits {
-    display: 'flex';
-    flex-wrap: 'wrap';
-    justify-content: 'center';
-    div {
-        margin-right: 10px;
-        margin-left: 10px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-portraits div {
+    margin-right: 10px;
+    margin-left: 10px;
 }
